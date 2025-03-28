@@ -1,0 +1,27 @@
+{
+    "name": "dch4o.github.io",
+    "dockerFile": "Dockerfile",
+    "features": {
+      "ghcr.io/devcontainers/features/node:1": {
+        "version": "18"
+      }
+    },
+    "forwardPorts": [4321],
+    // "mounts": [
+    //   "source=${localWorkspaceFolder}/node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+    // ],
+    "remoteUser": "node",
+    "postCreateCommand": "npm install",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "terminal.integrated.defaultProfile.linux": "bash"
+        },
+        "extensions": [
+          "astro-build.astro-vscode",
+          "esbenp.prettier-vscode"
+        ]
+      }
+    }
+  }
+  
