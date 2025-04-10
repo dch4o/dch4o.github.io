@@ -21,7 +21,6 @@ const metadata = {
     id="hero"
     title="Sarah Johnson"
     tagline="Personal Web Demo"
-    actions={[{ variant: 'primary', text: 'Hire me', href: getPermalink('/contact#form') }]}
   >
     <Fragment slot="subtitle">
       I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
@@ -40,6 +39,7 @@ const metadata = {
       alt: 'Colorful Image',
       loading: 'eager',
     }}
+    classes={{ container: 'max-w-5xl' }}
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
@@ -57,7 +57,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-neutral-200 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
@@ -146,6 +146,7 @@ const metadata = {
         description: 'Quick to adapt to new design trends, technologies, and client preferences.',
       },
     ]}
+    classes={{ container: 'max-w-5xl' }}
   />
 
   <!-- Content Widget **************** -->
@@ -177,6 +178,7 @@ const metadata = {
       icon: 'tabler:chevron-right',
       href: '#',
     }}
+    classes={{ container: 'max-w-5xl' }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
@@ -185,7 +187,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-neutral-200 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
@@ -215,6 +217,7 @@ const metadata = {
       icon: 'tabler:chevron-right',
       href: '#',
     }}
+    classes={{ container: 'max-w-5xl' }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
@@ -223,7 +226,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-neutral-200 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
@@ -252,6 +255,7 @@ const metadata = {
       icon: 'tabler:chevron-right',
       href: '#',
     }}
+    classes={{ container: 'max-w-5xl' }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
@@ -260,23 +264,9 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-neutral-200 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Let's create together"
-    subtitle="Ready to transform your vision into captivating designs?"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Hire me',
-        href: '/',
-      },
-    ]}
-  />
 
   <!-- BlogLatestPost Widget **************** -->
 
@@ -286,7 +276,7 @@ const metadata = {
     information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-neutral-100 dark:bg-transparent"></div>
     </Fragment>
   </BlogLatestPosts>
 </Layout>

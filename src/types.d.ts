@@ -39,9 +39,6 @@ export interface Post {
   /**  */
   Content?: AstroComponentFactory;
   content?: string;
-
-  /**  */
-  readingTime?: number;
 }
 
 export interface Taxonomy {
@@ -204,14 +201,6 @@ export interface Collapse {
   classes?: Record<string, string>;
 }
 
-export interface Form {
-  inputs?: Array<Input>;
-  textarea?: Textarea;
-  disclaimer?: Disclaimer;
-  button?: string;
-  description?: string;
-}
-
 // WIDGETS
 export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'classes'> {
   content?: string;
@@ -221,10 +210,6 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
   team?: Array<TeamMember>;
-}
-
-export interface Stats extends Omit<Headline, 'classes'>, Widget {
-  stats?: Array<Stat>;
 }
 
 export interface Features extends Omit<Headline, 'classes'>, Widget {

@@ -1,22 +1,24 @@
+import { link } from 'node:fs';
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Home',
+      text: 'About',
       href: '/',
     },
     {
       text: 'CV',
-      href: '/#CV',
-    },
-    {
-      text: 'Portfolio',
-      href: '/#Portfolio',
+      href: getPermalink('/personal/cv'),
     },
     {
       text: 'Blog',
-      href: getBlogPermalink(),
+      links: [
+        { text: 'All Posts', href: getBlogPermalink() },
+        { text: 'Paper Reviews', href: getPermalink('papers', 'category') },
+        { text: 'Development', href: getPermalink('development', 'category') },
+        { text: 'Life (Korean)', href: getPermalink('life', 'category') },
+      ]
     },
     { 
       text: 'Github', 
@@ -26,27 +28,10 @@ export const headerData = {
 };
 
 export const footerData = {
-  links: [
-    {
-      title: 'Personal',
-      links: [
-        { text: 'CV', href: '/#CV' },
-        { text: 'Portfolio', href: '/#Portfolio' },
-      ],
-    },
-    {
-      title: 'Blog',
-      links: [
-        { text: 'All Posts', href: getBlogPermalink() },
-        // { text: 'Categories', href: getPermalink('tutorials', 'category') },
-        // { text: 'Tags', href: getPermalink('astro', 'tag') },
-      ],
-    },
-  ],
   socialLinks: [
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/dch4o' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/dch4o' },
   ],
-  footNote: ``,
+  footNote: `Copyright © 2025 | Dohoon Cho`,
 };

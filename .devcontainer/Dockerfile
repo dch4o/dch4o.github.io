@@ -17,4 +17,6 @@ RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
     && locale-gen
 
 USER node
+WORKDIR /home/node
+
 ENV SHELL "/bin/bash"
