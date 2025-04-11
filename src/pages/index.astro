@@ -1,36 +1,88 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from "~/layouts/PageLayout.astro";
 
-import Hero2 from '~/components/widgets/Hero2.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import { getPermalink } from '~/utils/permalinks';
+import Hero2 from "~/components/widgets/Hero2.astro";
+import ItemGrid from "~/components/ui/ItemGrid.astro";
+import Content from "~/components/widgets/Content.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import { getPermalink } from "~/utils/permalinks";
 
-import profileImage from '~/assets/images/profile.png'
+import profileImage from "~/assets/images/profile.png";
 
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: "Personal Homepage Demo",
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
-
   <Hero2
-    id="hero"
-    title="Sarah Johnson"
-    tagline="Personal Web Demo"
+    id="about"
+    title="Dohoon Cho"
+    tagline="😊 Welcome!"
     image={{
       src: profileImage,
-      alt: 'Colorful Image',
-      loading: 'eager',
+      alt: "Colorful Image",
+      loading: "eager",
     }}
   >
     <Fragment slot="subtitle">
-      I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
-      New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating
-      realities.
+      I am a Robotics and <a
+        class="text-blue-500 underline dark:text-muted"
+        href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping"
+        >SLAM</a
+      > engineer deeply interested in Lidar sensors and their applications in autonomous
+      systems.<br /><br />
+      I completed my B.S. degree in Mechanical Engineering at Pohang University of
+      Science and Technology (POSTECH) and received my M.S. degree in Convergence
+      IT Engineering in the
+      <a
+        class="text-blue-500 underline dark:text-muted"
+        href="https://cocel.postech.ac.kr/"
+        >Computational Control Engineering Lab</a
+      > at POSTECH. After my academic courses, I am currently serving in an alternative
+      military service program.<br /><br />
+      You can reach out to me on:<br />
+      <ItemGrid
+        items={[
+          {
+            icon: "tabler:brand-github",
+            callToAction: {
+              target: "_blank",
+              text: "Github",
+              href: "https://github.com/dch4o",
+            },
+          },
+          {
+            icon: "tabler:brand-linkedin",
+            callToAction: {
+              target: "_blank",
+              text: "LinkedIn",
+              href: "https://www.linkedin.com/in/dch4o/",
+            },
+          },
+          {
+            icon: "tabler:mail",
+            callToAction: {
+              target: "_blank",
+              text: "Mail",
+              href: "mailto:dohooncho@gmail.com",
+            },
+          },
+        ]}
+        columns={4}
+        defaultIcon="tabler:check"
+        classes={{
+          container: `gap-y-4 md:gap-y-8`,
+          panel: "max-w-none",
+          title:
+            "text-lg font-medium leading-6 dark:text-white ml-1 rtl:ml-0 rtl:mr-2",
+          description: "text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2",
+          icon: "flex h-5 w-5 items-center justify-center rounded-full bg-slate-600 dark:bg-slate-700 text-gray-50 p-1",
+          action:
+            "text-base font-medium leading-4 dark:text-white ml-1 rtl:ml-0 rtl:mr-2",
+        }}
+      />
     </Fragment>
   </Hero2>
 
