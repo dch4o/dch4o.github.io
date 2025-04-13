@@ -21,8 +21,8 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div class={`flex flex-col gap-8 md:gap-12 md:flex-row ${isReversed ? 'md:flex-row-reverse' : ''}`}>
-    <div class={`w-full lg:w-1/2 gap-8 md:gap-12 ${isReversed ? 'lg:ml-16 md:ml-8 ml-0' : 'lg:mr-16 md:mr-8 mr-0'}`}>
+  <div class={`flex flex-col gap-8 md:gap-12 md:flex-row md:justify-between ${isReversed ? 'md:flex-row-reverse' : ''}`}>
+    <div class={`w-full lg:w-fit gap-8 md:gap-12 ${isReversed ? 'lg:ml-16 md:ml-8 ml-0' : 'lg:mr-16 md:mr-8 mr-0'}`}>
       <Headline
         title={title}
         subtitle={subtitle}
@@ -47,7 +47,7 @@ const {
         }
       </div>
     </div>
-    <div class="w-full lg:w-1/2 px-0">
+    <div class="w-full lg:w-auto px-0">
       <ul class="space-y-10">
         {
           items && items.length

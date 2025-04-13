@@ -44,6 +44,6 @@ export const footerData = {
   ],
   footNote: `
   <div>Copyright © 2025 | Dohoon Cho</div>
-  <div>Last updated on April 12, 2025. This blog is built based on <a class="text-blue-500 underline dark:text-muted" href="https://github.com/onwidget/astrowind"> Astrowind</a>.</div>
+  <div>Last updated on April 14, 2025. This blog is built based on <a class="text-blue-500 underline dark:text-muted" href="https://github.com/onwidget/astrowind"> Astrowind</a>.</div>
   `,
 };

@@ -1,8 +1,9 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from "~/layouts/PageLayout.astro";
 
-import Features3 from "~/components/widgets/Features3.astro";
+import Features2 from "~/components/widgets/Features2.astro";
 import Steps from "~/components/widgets/Steps.astro";
+import Steps2 from "~/components/widgets/Steps2.astro";
 
 const metadata = {
   title: "Curriculum Vitae",
@@ -16,92 +17,118 @@ const metadata = {
     items={[
       {
         title:
-          'Graphic Designer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
-        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
+          'Mapping & Localization Engineer <br /> <span class="font-normal tracking-sm"><a class="text-bold underline underline-offset-2" href="https://floatic.io/">Floatic</a> — Seoul, South Korea</span> <br /> <span class="text-sm font-normal">2024.03 - 2025.01</span>',
+        description: `
+        <ul class="flex flex-col space-y-1 pl-4 rtl:pl-0 rtl:pr-4 text-muted text-sm list-disc"> 
+          <li>Developed and validated a core C++ library and pipelines for sensor fusion based mapping and real-time localization applications on autonomous mobile robots. </li>
+          <li>Designed testable code architectures and automated CI workflows including unit tests and benchmark results on Github Actions.</li>
+          <li>Constructed CD pipeline to build and push light-weight ROS2 Docker images for both development and deployment.</li>
+        </ul>
+        `,
         icon: "tabler:briefcase",
       },
       {
         title:
-          'Junior Graphic Designer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
-        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+          'Mapping & Localization Engineer <br /> <span class="font-normal tracking-sm"><a class="text-bold underline underline-offset-2" href="https://www.thordrive.ai/">Thordrive</a> — Seoul, South Korea</span> <br /> <span class="text-sm font-normal">2022.08 - 2024.02</span>',
+        description: `
+        <ul class="flex flex-col space-y-1 pl-4 rtl:pl-0 rtl:pr-4 text-muted text-sm list-disc"> 
+          <li>Developed GPU-accelerated Lidar-based mapping and localization applications for autonomous vehicles.</li>
+          <li>Implemented and evaluated sensor drivers, time synchronization and Docker containers on Nvidia Jetson platforms.</li>
+          <li>Developed targetless Lidar extrinsic calibration method in partially overlapping environments.</li>
+        </ul>
+        `,
         icon: "tabler:briefcase",
       },
     ]}
-    classes={{ container: "max-w-3xl" }}
+    classes={{ container: "max-w-4xl" }}
   />
-
-  <!-- Steps Widget ****************** -->
 
   <Steps
     id="CV"
     title="Education"
     items={[
       {
-        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
+        title: `Master’s degree in Convergence IT Engineering <br /> <a class="font-normal" href="http://postech.ac.kr/">Pohang University of Science and Technology (POSTECH)</a> <br /> <span class="text-sm font-normal">2019.09 - 2022.08</span>`,
+        description: `
+        <ul class="flex flex-col space-y-1 pl-4 rtl:pl-0 rtl:pr-4 text-muted text-sm list-disc"> 
+          <li><a class="underline underline-offset-2" href="https://cocel.postech.ac.kr/">Computational Control Engineering Lab (CoCEL)</a> advised by Prof. <a class="underline underline-offset-2" href="https://scholar.google.com/citations?user=bZNLufsAAAAJ&hl=en">Soohee Han</a></li>
+          <li>Thesis title: Continuous 3D Scan Update for Resilient IMU Preintegration in Tightly Coupled Lidar-Inertial SLAM</li>
+          <li>Proposed a novel approach for a continuous Lidar point cloud updates and uncertatinty approximation methods to enhance the robustness of state estimation in tightly coupled Lidar-Inertial system</li>
+        </ul>
+        `,
         icon: "tabler:school",
       },
       {
-        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
+        title: `Bachelor’s degree in Mechanical Engineering <br /> <a class="font-normal" href="http://postech.ac.kr/">Pohang University of Science and Technology (POSTECH)</a> <br /> <span class="text-sm font-normal">2015.02 - 2019.08</span>`,
+        description: `
+        <ul class="flex flex-col space-y-1 pl-4 rtl:pl-0 rtl:pr-4 text-muted text-sm list-disc"> 
+          <li>National Science and Technology Scholarship (full scholarship)</li>
+          <li>Graduated with honors (Cum Laude).</li>
+        </ul>
+        `,
         icon: "tabler:school",
       },
     ]}
-    classes={{ container: "max-w-3xl" }}
-  />
+    classes={{ container: "max-w-4xl" }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-100 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
 
-  <!-- Features3 Widget ************** -->
-
-  <Features3
+  <Steps2
     title="Skills"
-    subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
-    columns={3}
-    defaultIcon="tabler:point-filled"
     items={[
       {
-        title: "Graphic design",
-        description:
-          "Proficient in crafting visually appealing designs that convey messages effectively.",
+        title: "Programming language",
+        description: `
+          <div class="flex flex-row gap-5 items-center">
+            <div class="text-muted">C/C++</div>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <div class="text-muted">Python</div>
+          </div>
+        `,
+        icon: "tabler:brand-stackoverflow",
       },
       {
-        title: "Branding and identity",
-        description:
-          "Skilled at developing cohesive brand identities, including logos and brand guidelines.",
+        title: "Familiar Libraries",
+        description: `
+          <div class="flex flex-row gap-5 mx-auto items-center">
+            <a class="text-muted" href="https://eigen.tuxfamily.org/">Eigen</a>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <a class="text-muted" href="https://github.com/strasdat/Sophus">Sophus</a>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <a class="text-muted" href="https://ceres-solver.org/">Google Ceres</a>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <a class="text-muted" href="https://gtsam.org/">GTSAM</a>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <a class="text-muted" href="https://pointclouds.org/">PCL</a>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <a class="text-muted" href="https://www.open3d.org/">Open3D</a>
+          </div>
+        `,
+        icon: "tabler:library",
       },
       {
-        title: "User-centered design",
-        description:
-          "Experienced in creating user-friendly interfaces and optimizing user experiences.",
-      },
-      {
-        title: "Adobe Creative Suite",
-        description:
-          "Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.",
-      },
-      {
-        title: "Typography",
-        description:
-          "Adept in selecting and manipulating typefaces to enhance design aesthetics.",
-      },
-      {
-        title: "Color theory",
-        description:
-          "Proficient in using color to evoke emotions and enhance visual harmony.",
-      },
-      {
-        title: "Print and digital design",
-        description:
-          "Knowledgeable in designing for both print materials and digital platforms.",
-      },
-      {
-        title: "Attention to detail",
-        description:
-          "Diligent in maintaining precision and quality in all design work.",
-      },
-      {
-        title: "Adaptability",
-        description:
-          "Quick to adapt to new design trends, technologies, and client preferences.",
+        title: "Tools",
+        description: `
+          <div class="flex flex-row gap-5 items-center">
+            <div class="text-muted">ROS/ROS2</div>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <div class="text-muted">Docker</div>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <div class="text-muted">Git/Github</div>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <div class="text-muted">CMake</div>
+            <div class="h-4 border-[1.5px] border-gray-400"></div>
+            <div class="text-muted">Catch2</div>
+          </div>
+        `,
+        icon: "tabler:hammer",
       },
     ]}
-    classes={{ container: "max-w-5xl" }}
+    classes={{
+      container: "max-w-4xl",
+    }}
   />
 </Layout>
