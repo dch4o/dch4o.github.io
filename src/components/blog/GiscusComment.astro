@@ -1,0 +1,56 @@
+---
+import { I18N } from "astrowind:config";
+
+const { language } = I18N;
+---
+
+<div class="giscus-wrapper mt-8">
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="dch4o/dch4o.github.io"
+    data-repo-id="R_kgDOOO03fg"
+    data-category="General"
+    data-category-id="DIC_kwDOOO03fs4CpF8M"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang={language}
+    crossorigin="anonymous"
+    async></script>
+  <script is:inline>
+    const updateGiscusTheme = () => {
+      const theme = document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light";
+
+      const iframe = document.querySelector("iframe.giscus-frame");
+
+      if (iframe)
+        iframe.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        );
+    };
+
+    const observer = new MutationObserver(updateGiscusTheme);
+    const html = document.querySelector("html");
+    observer.observe(html, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const giscusConfig = document.querySelector("#giscusConfig");
+
+      if (giscusConfig) {
+        const theme = document.documentElement.classList.contains("dark")
+          ? "dark"
+          : "light";
+        giscusConfig.setAttribute("data-theme", theme);
+      }
+    });
+  </script>
+</div>
