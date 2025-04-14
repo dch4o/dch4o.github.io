@@ -11,7 +11,7 @@ metadata:
   title:
     default: Dohoon
     template: '%s — Dohoon'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F335 Dohoon's Blog"
   robots:
     index: true
     follow: true
@@ -19,13 +19,9 @@ metadata:
     site_name: Dohoon
     images:
       - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+        width: 1726
+        height: 961
     type: website
-  twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
-    cardType: summary_large_image
 
 i18n:
   language: en
