@@ -12,12 +12,12 @@ export const headerData = {
       href: getPermalink("/personal/cv"),
     },
     {
-      text: "Blog",
+      text: "Blog(KR/EN)",
       links: [
         { text: "All Posts", href: getBlogPermalink() },
         { text: "Paper Reviews", href: getPermalink("papers", "category") },
         { text: "Development", href: getPermalink("development", "category") },
-        { text: "Life (Korean)", href: getPermalink("life", "category") },
+        { text: "Life", href: getPermalink("life", "category") },
       ],
     },
     {
